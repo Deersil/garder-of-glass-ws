@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    container_name: garden
+    restart: always
+    build: .
+    ports:
+      - '8000:3000'
+    links:
+      - db
+  db:
+    container_name: garder-db
+    image: postgres
+    ports:
+      - '5432:5432'

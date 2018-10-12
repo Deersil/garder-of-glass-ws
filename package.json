@@ -1,0 +1,37 @@
+{
+  "name": "garden-of-glass-ws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "_moduleAliases": {
+    "@src": "./src",
+    "@constants" : "./src/constants",
+    "@models" : "./src/models"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/jsonwebtoken": "^7.2.8",
+    "bcrypt": "^3.0.1",
+    "dotenv": "^6.1.0",
+    "jsonwebtoken": "^8.3.0",
+    "koa": "^2.5.3",
+    "koa-router": "^7.4.0",
+    "module-alias": "^2.1.0",
+    "pg": "^7.5.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.32",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.2"
+  }
+}
