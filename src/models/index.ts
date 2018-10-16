@@ -1,8 +1,5 @@
-// import * as Sequelize from 'sequelize';
 const Sequelize = require('sequelize');
-
 import User from './User';
-
 const {
   DB_HOST,
   DB_HOST_PORT,
@@ -28,5 +25,5 @@ const getModel = (file: any) => file(sequelize, Sequelize.DataTypes);
 
 export default {
   sequelize,
-  User: getModel(User)
+  User: getModel(User),
 };

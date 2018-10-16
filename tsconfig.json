@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
-      "module": "commonjs",
-      "target": "es2017",
-      "noImplicitAny": true,
-      "outDir": "./dist",
-      "sourceMap": true
+    "module": "commonjs",
+    "target": "es2017",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src": ["./src"],
+      "@config": ["./src/config"],
+      "@dto": ["./src/dto"],
+      "@constants": ["./src/constants"],
+      "@controllers": ["./src/controllers"],
+      "@services": ["./src/services"],
+      "@routes": ["./src/routes"],
+      "@utils": ["./src/utils"]
+    }
   },
   "include": [
-      "./src/**/*"
+    "./src/**/*"
   ]
 }

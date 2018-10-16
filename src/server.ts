@@ -4,22 +4,13 @@ require('module-alias/register');
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import '@models';
+import router from '@routes';
 
 const app = new Koa();
 
 app.use(async (ctx, next) => {
     console.log('Url:', ctx.url);
     await next();
-});
-
-
-const router = new Router();
-router.get('/hey', async (ctx) => {
-    ctx.body = 'dsda World!';
-});
-
-router.get('/*', async (ctx) => {
-    ctx.body = ' World!';
 });
 
 app.use(router.routes());

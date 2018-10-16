@@ -1,14 +1,40 @@
 import * as Router from 'koa-router';
+import {
+  BASE_API_URL,
+  HTTP_POST_METHOD,
+  HTTP_GET_METHOD,
+  HTTP_PUT_METHOD,
+} from '@constants';
 
-import { adminPartRouter } from './user.routes';
+// import { routeWrapper } from '@utils';
+// route(adminPartRouter, 'post', '/login', authHandlers, 'loginSystemUserHandler');
 
-import { checkGlobalAccessRights } from '../services/auth';
+// import { adminPartRouter } from './user.routes';
 
-const baseApiRouter = new Router({ prefix: '/api/v1' });
+// import { checkGlobalAccessRights } from '../services/auth';
 
-baseApiRouter.use('*', checkGlobalAccessRights);
+const router = new Router({
+  prefix: BASE_API_URL,
+});
+// routeWrapper(
+//   clientPartRouter,
+//   HTTP_POST_METHOD,
+//   authorizationPathes.CLIENT_AUTHORIZATION,
+//   authHandlers,
+//   'clientAuthorizationHandler',
+// )
+// routeWrapper()
+
+router.get('/pizda', async (ctx) => {
+  ctx.body = ' asdasdasd World!';
+});
+
+router.get('/*', async (ctx) => {
+  ctx.body = ' World!';
+});
+// baseApiRouter.use('*', checkGlobalAccessRights);
 
 
-baseApiRouter.use('/admin', adminPartRouter.routes(), adminPartRouter.allowedMethods);
-
-export default baseApiRouter;
+// router.use('/user', adminPartRouter.routes(), adminPartRouter.allowedMethods);
+// 
+export default router;

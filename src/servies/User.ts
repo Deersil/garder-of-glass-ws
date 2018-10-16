@@ -1,6 +1,6 @@
 // import { User } from '../models';
 import * as jwt from 'jsonwebtoken';
-import config from '../config';
+import config from '@config';
 
 
 export const validateJWT = (token: any) => {
