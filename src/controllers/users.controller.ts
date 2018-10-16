@@ -1,11 +1,13 @@
-import { testFunc } from '../services/auth.service';;
+import { registration } from '../services/auth.service';;
 
-export const test = async (ctx: any) => {
+export const signUp = async (ctx: any) => {
   try {
-    ctx.body = 'One love!!!';
-    testFunc();
+    const { email, password } = ctx.request.body;
+    await registration(email, password);
+    ctx.status = 200;
   } catch (e) {
+    console.log('error ', e);
     ctx.status = 401;
-    ctx.body = { kek: 'kek' };
+    ctx.body = { kek: e};
   }
 };

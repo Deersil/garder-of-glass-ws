@@ -23,6 +23,11 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
 sequelize.authenticate();
 const getModel = (file: any) => file(sequelize, Sequelize.DataTypes);
 
+sequelize.sync()
+  .then(() => {
+    console.log('the db is synced');
+  })
+
 export const User = getModel(userModal);
 export default {
   sequelize,
