@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-import User from './User';
+import userModal from './user.model';
 const {
   DB_HOST,
   DB_HOST_PORT,
@@ -23,7 +23,7 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
 sequelize.authenticate();
 const getModel = (file: any) => file(sequelize, Sequelize.DataTypes);
 
+export const User = getModel(userModal);
 export default {
   sequelize,
-  User: getModel(User),
 };

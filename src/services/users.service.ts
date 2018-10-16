@@ -12,6 +12,9 @@ export const validateJWT = (token: any) => {
 };
 
 
+export default {
+  validateJWT,
+}
 // export const findAll = ({ page = 1, perPage = 10}) => (
 
 // )
