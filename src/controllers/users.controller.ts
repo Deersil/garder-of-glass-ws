@@ -1,4 +1,4 @@
-import { registration } from '../services/auth.service';;
+import { registration } from '../services/auth.service';
 
 export const signUp = async (ctx: any) => {
   try {
