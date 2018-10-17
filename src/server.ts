@@ -7,18 +7,22 @@ import * as bodyParser from 'koa-bodyparser';
 import '@models';
 import router from '@routes';
 
+const {
+  API_PORT
+} = process.env;
+
 const app = new Koa();
 
 app.use(async (ctx, next) => {
-    console.log('Url:', ctx.url);
-    console.log('Method: ', ctx.method);
-    await next();
+  console.log('Url:', ctx.url);
+  console.log('Method: ', ctx.method);
+  await next();
 });
 
 app.use(bodyParser());
 
 app.use(router.routes());
 
-app.listen(3000);
+app.listen(API_PORT);
 
-console.log('Server running on port 3000');
+console.log(`Server running on port ${API_PORT}`);
